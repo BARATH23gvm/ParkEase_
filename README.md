@@ -1,30 +1,33 @@
-🚗 Car Parking Management System
-This is a GUI-based Java application designed to handle parking management functions such as vehicle entry, slot allocation, release, and data monitoring using a MySQL database for backend storage.
+# 🚗 Car Parking Management System
 
-📁 Project Structure
-CarParking.java – Main interface for parking a vehicle.
+This is a GUI-based Java application designed to manage car parking, including booking slots, releasing vehicles, and viewing all parking data. The system uses a MySQL database to store vehicle information.
 
-CarRele.java – Interface for releasing a parked vehicle and updating end time.
+---
 
-parkingdata.java – Displays all parking data stored in the database.
+## 📁 Project Files
 
-carpark.java – Class model representing a parked vehicle's data.
+- `CarParking.java` – GUI for parking a car.
+- `CarRele.java` – GUI for releasing a parked car.
+- `parkingdata.java` – View all current parking data.
+- `carpark.java` – Model class representing a parking record.
 
-🛠️ Technologies Used
-Java Swing for GUI
+---
 
-JDBC for MySQL database interaction
+## 🛠️ Technologies Used
 
-MySQL for data storage
+- Java (Swing for GUI)
+- JDBC for MySQL connectivity
+- MySQL for data storage
 
-⚙️ Setup Instructions
-Install MySQL and create a database called parking.
+---
 
-Run the following SQL to create the table:
+## ⚙️ Setup Instructions
 
-sql
-Copy
-Edit
+### 1. MySQL Setup
+
+Create a database named `parking`, then run:
+
+```sql
 CREATE TABLE parkingdata1 (
   carnum VARCHAR(20),
   name VARCHAR(100),
@@ -35,19 +38,20 @@ CREATE TABLE parkingdata1 (
   cost INT,
   endTime VARCHAR(20)
 );
-Update Database Credentials
-In all Java files (CarParking.java, CarRele.java, and parkingdata.java), replace:
+
+2. Update Credentials
+In your Java files, make sure to update the database credentials in this section:
 
 java
 Copy
 Edit
-String uname = "root";
-String pass = "barath23102003";
-with your own MySQL username and password.
+String url = "jdbc:mysql://localhost:3306/parking";
+String uname = "root"; // your MySQL username
+String pass = "barath23102003"; // your MySQL password
+Replace uname and pass with your actual MySQL login.
 
-Compile and Run the Application
-
-Use any IDE (like Eclipse or IntelliJ) or command line to compile and run:
+3. Compile and Run
+You can compile and run the program using the terminal or your preferred IDE.
 
 bash
 Copy
@@ -55,29 +59,24 @@ Edit
 javac *.java
 java CarParking
 🚦 How It Works
-Car Entry (CarParking.java)
+CarParking.java:
+Book a parking slot by entering vehicle and owner details. Slot is saved in MySQL and appended to a text file carpark.txt.
 
-Select a parking slot.
+CarRele.java:
+Release a vehicle by entering car number and name. Updates endTime and calculates total cost.
 
-Enter car number, name, mobile number, and timing details.
+parkingdata.java:
+View a full log of all parked and released vehicles, including duration and cost.
 
-Save entry which stores it in the database and carpark.txt.
+💰 Pricing Logic
+₹5 per hour or ₹100 per day.
 
-Car Release (CarRele.java)
-
-Enter the same car number and name.
-
-Enter end time and release the vehicle.
-
-Cost is calculated and updated.
-
-View Data (parkingdata.java)
-
-Shows all parked and released vehicle information including cost.
+Cost is calculated based on the entered duration at the time of parking.
 
 📌 Notes
-Duration is calculated in hours, and cost is 5 INR/hour or 100 INR/day.
+GUI components are built using Swing.
 
-Text file carpark.txt is also used to keep a local record.
+Parking slots are selected using checkbox groups (A1–F12).
 
-GUI includes checkbox-based parking slot selection.
+Local logs are written to carpark.txt.
+
