@@ -27,7 +27,7 @@ This is a GUI-based Java application designed to manage car parking, including b
 
 Create a database named `parking`, then run:
 
-```sql
+'''sql
 CREATE TABLE parkingdata1 (
   carnum VARCHAR(20),
   name VARCHAR(100),
@@ -39,7 +39,7 @@ CREATE TABLE parkingdata1 (
   endTime VARCHAR(20)
 );
 
-2. Update Credentials
+### 2. Update Credentials
 In your Java files, make sure to update the database credentials in this section:
 
 java
@@ -50,7 +50,7 @@ String uname = "root"; // your MySQL username
 String pass = "barath23102003"; // your MySQL password
 Replace uname and pass with your actual MySQL login.
 
-3. Compile and Run
+### 3. Compile and Run
 You can compile and run the program using the terminal or your preferred IDE.
 
 bash
