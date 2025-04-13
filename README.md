@@ -46,8 +46,8 @@ java
 Copy
 Edit
 String url = "jdbc:mysql://localhost:3306/parking";
-String uname = "root"; // your MySQL username
-String pass = "barath23102003"; // your MySQL password
+String uname = "r***t"; // your MySQL username
+String pass = "*********"; // your MySQL password
 Replace uname and pass with your actual MySQL login.
 
 ### 3. Compile and Run
