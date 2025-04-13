@@ -58,22 +58,22 @@ Copy
 Edit
 javac *.java
 java CarParking
-##🚦 How It Works
-###CarParking.java:
+## 🚦 How It Works
+### CarParking.java:
 Book a parking slot by entering vehicle and owner details. Slot is saved in MySQL and appended to a text file carpark.txt.
 
-###CarRele.java:
+### CarRele.java:
 Release a vehicle by entering car number and name. Updates endTime and calculates total cost.
 
-###parkingdata.java:
+### parkingdata.java:
 View a full log of all parked and released vehicles, including duration and cost.
 
-##💰 Pricing Logic
+## 💰 Pricing Logic
 ₹5 per hour or ₹100 per day.
 
 Cost is calculated based on the entered duration at the time of parking.
 
-##📌 Notes
+## 📌 Notes
 GUI components are built using Swing.
 
 Parking slots are selected using checkbox groups (A1–F12).
